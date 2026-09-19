@@ -1,10 +1,16 @@
-# Vanna 2.0: Turn Questions into Data Insights
+# SageQL
 
-**Natural language → SQL → Answers.** Now with enterprise security and user-aware permissions.
+**Natural language → SQL → Answers.** User-aware agents with enterprise security and per-user permissions.
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+> **Provenance** — SageQL is a fork-and-continue of [vanna-ai/vanna](https://github.com/vanna-ai/vanna)
+> (MIT), whose upstream repository was archived on 2026-03-29. The baseline is tagged
+> [`vanna-baseline`](../../releases/tag/vanna-baseline) at commit
+> `365d0617c1a4567ffee1b19b40c27feb4206bfcf` (Vanna 2.0, agent-based rewrite).
+> All changes after that tag are SageQL's own. See [LICENSE](LICENSE) for the original
+> copyright and license notice.
 
 https://github.com/user-attachments/assets/476cd421-d0b0-46af-8b29-0f40c73d6d83
 
@@ -13,11 +19,11 @@ https://github.com/user-attachments/assets/476cd421-d0b0-46af-8b29-0f40c73d6d83
 
 ---
 
-## What's New in 2.0
+## Highlights
 
 🔐 **User-Aware at Every Layer** — Queries automatically filtered per user permissions
 
-🎨 **Modern Web Interface** — Beautiful pre-built `<vanna-chat>` component
+🎨 **Modern Web Interface** — Pre-built chat web component
 
 ⚡ **Streaming Responses** — Real-time tables, charts, and progress updates
 
@@ -25,19 +31,13 @@ https://github.com/user-attachments/assets/476cd421-d0b0-46af-8b29-0f40c73d6d83
 
 🔄 **Production-Ready** — FastAPI integration, observability, lifecycle hooks
 
-> **Upgrading from 0.x?** See the [Migration Guide](MIGRATION_GUIDE.md) | [What changed?](#migration-notes)
-
 ---
 
 ## Get Started
 
-### Try it with Sample Data
-
-[Quickstart](https://vanna.ai/docs/quick-start)
-
-### Configure
-
-[Configure](https://vanna.ai/docs/configure)
+> **Note** — The original documentation site (vanna.ai/docs) belongs to the archived upstream
+> project and may disappear at any time. Until SageQL ships its own docs, treat this README,
+> the code in this repository, and the example below as the source of truth.
 
 ### Web Component
 
@@ -72,7 +72,7 @@ All streamed in real-time to your web component.
 
 ---
 
-## Why Vanna 2.0?
+## Why SageQL?
 
 ### ✅ Get Started Instantly
 * Production chat interface
@@ -142,7 +142,7 @@ sequenceDiagram
 
 ## Production Setup with Your Auth
 
-Here's a complete example integrating Vanna with your existing FastAPI app and authentication:
+Here's a complete example integrating SageQL with your existing FastAPI app and authentication:
 
 ```python
 from fastapi import FastAPI
@@ -196,13 +196,13 @@ register_chat_routes(app, chat_handler)
 <vanna-chat sse-endpoint="/api/vanna/v2/chat_sse"></vanna-chat>
 ```
 
-See [Full Documentation](https://vanna.ai/docs) for custom tools, lifecycle hooks, and advanced configuration
+Custom tools, lifecycle hooks, and advanced configuration are documented in the code and examples above.
 
 ---
 
 ## Custom Tools
 
-Extend Vanna with custom tools for your specific use case:
+Extend SageQL with custom tools for your specific use case:
 
 ```python
 from vanna.core.tool import Tool, ToolContext, ToolResult
@@ -245,7 +245,7 @@ tools.register(EmailTool())
 
 ## Advanced Features
 
-Vanna 2.0 includes powerful enterprise features for production use:
+SageQL includes powerful enterprise features for production use:
 
 **Lifecycle Hooks** — Add quota checking, custom logging, content filtering at key points in the request lifecycle
 
@@ -263,7 +263,7 @@ Vanna 2.0 includes powerful enterprise features for production use:
 
 ## Use Cases
 
-**Vanna is ideal for:**
+**SageQL is ideal for:**
 - 📊 Data analytics applications with natural language interfaces
 - 🔐 Multi-tenant SaaS needing user-aware permissions
 - 🎨 Teams wanting a pre-built web component + backend
@@ -275,10 +275,8 @@ Vanna 2.0 includes powerful enterprise features for production use:
 
 ## Community & Support
 
-- 📖 **[Full Documentation](https://vanna.ai/docs)** — Complete guides and API reference
-- 💡 **[GitHub Discussions](https://github.com/vanna-ai/vanna/discussions)** — Feature requests and Q&A
-- 🐛 **[GitHub Issues](https://github.com/vanna-ai/vanna/issues)** — Bug reports
-- 📧 **Enterprise Support** — support@vanna.ai
+- 💡 **[Upstream Repository](https://github.com/vanna-ai/vanna)** — vanna-ai/vanna (archived, read-only)
+- 🐛 **[Issues](../../issues)** — SageQL bug reports and feature requests
 
 ---
 
@@ -308,4 +306,4 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 ---
 
-**Built with ❤️ by the Vanna team** | [Website](https://vanna.ai) | [Docs](https://vanna.ai/docs) | [Discussions](https://github.com/vanna-ai/vanna/discussions)
+**Forked from [vanna-ai/vanna](https://github.com/vanna-ai/vanna) and continued as SageQL.** Licensed under the [MIT License](LICENSE).
